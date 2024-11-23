@@ -40,7 +40,7 @@ nbgitpuller = "~=1.2.0"
 # pycodestyle is dependency of below packages 
 # and to achieve compatible of pycodestyle with python-lsp-server[all]
 # pinned the below packages
-autopep8 = "~=2.0.4"
+autopep8 = "~=2.3.1"
 flake8 = "~=7.0.0"
 # Base packages
 wheel = "~=0.43.0"

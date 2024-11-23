@@ -54,7 +54,7 @@ setuptools = "~=69.2.0"
 # conflict between python-lsp-server and following packages
 # due to pycodestyle dependency, pinning this, till we get 
 # a fix from python-lsp-server 
-autopep8 = "~=2.0.4"
+autopep8 = "~=2.3.1"
 flake8 = "~=7.0.0"
 
 [requires]
