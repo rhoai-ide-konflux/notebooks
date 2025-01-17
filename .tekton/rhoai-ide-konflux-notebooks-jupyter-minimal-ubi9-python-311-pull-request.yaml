@@ -217,10 +217,6 @@ spec:
             value: $(params.output-image)-chain-base
           - name: DOCKERFILE
             value: base/ubi9-python-3.11/Dockerfile
-          - name: BUILD_ARGS
-            type: array
-            value:
-              - "a=b"
         - name: "final"
           params:
           - name: IMAGE
