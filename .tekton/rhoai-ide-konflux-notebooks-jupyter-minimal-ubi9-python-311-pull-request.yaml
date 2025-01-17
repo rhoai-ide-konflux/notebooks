@@ -220,7 +220,7 @@ spec:
           - name: BUILD_ARGS
             value:
               - $(params.build-args[*])
-        - name: ""
+        - name: "final"
           params:
           - name: IMAGE
             value: $(params.output-image)
@@ -229,7 +229,7 @@ spec:
           - name: BUILD_ARGS
             value:
             - $(params.build-args[*])
-            - "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF.$(params.output-image)-chain-base)"
+            - "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF.chain-base)"
       params:
         - name: CONTEXT
           value: $(params.path-context)
@@ -320,7 +320,7 @@ spec:
         value: $(params.build-image-index)
       - name: IMAGES
         value:
-        - $(tasks.build-container.results.IMAGE_URL)@$(tasks.build-container.results.IMAGE_DIGEST)
+        - "$(tasks.build-container.matrix.IMAGE_REF.final)"
       runAfter:
       - build-container
       taskRef:
