@@ -228,7 +228,7 @@ spec:
             value: $(params.dockerfile)
           - name: BUILD_ARGS
             value:
-            - $(params.build-args[*])
+            #- $(params.build-args[*])
             - "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF.chain-base)"
       params:
         - name: CONTEXT
