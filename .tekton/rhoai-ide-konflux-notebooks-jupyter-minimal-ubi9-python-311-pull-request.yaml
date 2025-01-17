@@ -217,19 +217,13 @@ spec:
             value: $(params.output-image)-chain-base
           - name: DOCKERFILE
             value: base/ubi9-python-3.11/Dockerfile
-          - name: BUILD_ARGS
-            value:
-              - $(params.build-args[*])
+
         - name: "final"
           params:
           - name: IMAGE
             value: $(params.output-image)
           - name: DOCKERFILE
             value: $(params.dockerfile)
-          - name: BUILD_ARGS
-            value:
-            - $(params.build-args[*])
-            #- "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF[0])"
       params:
         - name: CONTEXT
           value: $(params.path-context)
