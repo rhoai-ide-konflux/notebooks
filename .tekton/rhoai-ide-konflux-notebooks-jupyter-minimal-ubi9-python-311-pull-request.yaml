@@ -220,7 +220,7 @@ spec:
           - name: BUILD_ARGS
             type: array
             value:
-              - $(params.build-args[*])
+              - "a=b"
         - name: "final"
           params:
           - name: IMAGE
