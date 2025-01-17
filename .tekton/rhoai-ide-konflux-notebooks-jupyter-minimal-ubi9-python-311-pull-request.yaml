@@ -226,9 +226,10 @@ spec:
             value: $(params.output-image)
           - name: DOCKERFILE
             value: $(params.dockerfile)
-          - name: BUILD_ARGS
-            value: "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF[0])"
+
       params:
+        - name: BUILD_ARGS
+          value: ["BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF[0])"]
         - name: CONTEXT
           value: $(params.path-context)
         - name: HERMETIC
