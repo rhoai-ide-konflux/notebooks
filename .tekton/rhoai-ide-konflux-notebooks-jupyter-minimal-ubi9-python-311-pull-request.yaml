@@ -229,7 +229,7 @@ spec:
           - name: BUILD_ARGS
             value:
             #- $(params.build-args[*])
-            - "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF[1])"
+            - "BASE_IMAGE=$(tasks.build-container.matrix.IMAGE_REF[0])"
       params:
         - name: CONTEXT
           value: $(params.path-context)
