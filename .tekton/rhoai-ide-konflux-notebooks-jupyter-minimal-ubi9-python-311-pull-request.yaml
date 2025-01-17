@@ -194,6 +194,7 @@ spec:
 
     - name: inline-task
       taskSpec:
+        # https://tekton.dev/docs/pipelines/tasks/#emitting-results
         results:
           - name: make-targets
             description: targets-to-build
@@ -204,7 +205,7 @@ spec:
             script: |
               #!/bin/sh
               echo "Hello World"
-              echo -n '["baf", "lek"]' > "$(results.make-targets)"
+              echo -n '["baf", "lek"]' > "$(results.make-targets.path)"
 
     # gmake jupyter-minimal-ubi9-python-3.11 --just-print | grep '#*# Image build directory'
     - name: build-container
