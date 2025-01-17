@@ -194,12 +194,17 @@ spec:
 
     - name: inline-task
       taskSpec:
+        results:
+          - name: make-targets
+            description: targets-to-build
+            type: array
         steps:
           - name: echo
             image: alpine
             script: |
               #!/bin/sh
               echo "Hello World"
+              echo -n '["baf", "lek"]' > "$(results.make-targets)"
 
     # gmake jupyter-minimal-ubi9-python-3.11 --just-print | grep '#*# Image build directory'
     - name: build-container-chain-base
