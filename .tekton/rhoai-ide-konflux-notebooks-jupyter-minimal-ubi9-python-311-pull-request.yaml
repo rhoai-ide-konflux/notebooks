@@ -192,6 +192,15 @@ spec:
       - name: netrc
         workspace: netrc
 
+    - name: inline-task
+      taskSpec:
+        steps:
+          - name: echo
+            image: alpine
+            script: |
+              #!/bin/sh
+              echo "Hello World"
+
     # gmake jupyter-minimal-ubi9-python-3.11 --just-print | grep '#*# Image build directory'
     - name: build-container-chain-base
       params:
