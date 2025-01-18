@@ -206,7 +206,7 @@ spec:
       - name: IMAGE
         value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/base-ubi9-python-3-11:on-pr-{{revision}}
       - name: DOCKERFILE
-        value: codeserver/ubi9-python-3.11/Dockerfile
+        value: base/ubi9-python-3.11/Dockerfile
       - name: CONTEXT
         value: $(params.path-context)
       - name: HERMETIC
