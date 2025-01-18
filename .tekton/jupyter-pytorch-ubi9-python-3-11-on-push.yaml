@@ -14,7 +14,7 @@ metadata:
     appstudio.openshift.io/application: rhoai-ide-konflux-notebooks
     appstudio.openshift.io/component: jupyter-pytorch-ubi9-python-3-11
     pipelines.appstudio.openshift.io/type: build
-  name: on-push
+  name: jupyter-pytorch-ubi9-python-3-11-on-push
   namespace: rhoai-ide-konflux-tenant
 spec:
   params:

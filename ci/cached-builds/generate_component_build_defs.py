@@ -92,7 +92,7 @@ def build_container(
 
 def component_build_pr(component_name, dockerfile_path,
                        build_container_tasks: list[dict], is_pr: bool = True) -> dict:
-    name = component_name + "-on-pull-request" if is_pr else "on-push"
+    name = component_name + ("-on-pull-request" if is_pr else "-on-push")
     return {
         "apiVersion": "tekton.dev/v1",
         "kind": "PipelineRun",

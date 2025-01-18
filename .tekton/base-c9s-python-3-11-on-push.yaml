@@ -14,7 +14,7 @@ metadata:
     appstudio.openshift.io/application: rhoai-ide-konflux-notebooks
     appstudio.openshift.io/component: base-c9s-python-3-11
     pipelines.appstudio.openshift.io/type: build
-  name: on-push
+  name: base-c9s-python-3-11-on-push
   namespace: rhoai-ide-konflux-tenant
 spec:
   params:
