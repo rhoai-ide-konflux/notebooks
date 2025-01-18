@@ -204,9 +204,9 @@ spec:
     - name: build-container-0
       params:
       - name: IMAGE
-        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/cuda-jupyter-datascience-ubi9-python-3-11:on-pr-{{revision}}
+        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/base-ubi9-python-3-11:on-pr-{{revision}}
       - name: DOCKERFILE
-        value: jupyter/datascience/ubi9-python-3.11/Dockerfile
+        value: base/ubi9-python-3.11/Dockerfile
       - name: CONTEXT
         value: $(params.path-context)
       - name: HERMETIC
@@ -245,9 +245,9 @@ spec:
     - name: build-container-1
       params:
       - name: IMAGE
-        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/cuda-jupyter-minimal-ubi9-python-3-11:on-pr-{{revision}}
+        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/cuda-ubi9-python-3-11:on-pr-{{revision}}
       - name: DOCKERFILE
-        value: jupyter/minimal/ubi9-python-3.11/Dockerfile
+        value: cuda/ubi9-python-3.11/Dockerfile
       - name: CONTEXT
         value: $(params.path-context)
       - name: HERMETIC
@@ -286,9 +286,9 @@ spec:
     - name: build-container-2
       params:
       - name: IMAGE
-        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/cuda-ubi9-python-3-11:on-pr-{{revision}}
+        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/cuda-jupyter-minimal-ubi9-python-3-11:on-pr-{{revision}}
       - name: DOCKERFILE
-        value: cuda/ubi9-python-3.11/Dockerfile
+        value: jupyter/minimal/ubi9-python-3.11/Dockerfile
       - name: CONTEXT
         value: $(params.path-context)
       - name: HERMETIC
@@ -327,9 +327,9 @@ spec:
     - name: build-container-3
       params:
       - name: IMAGE
-        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/base-ubi9-python-3-11:on-pr-{{revision}}
+        value: quay.io/redhat-user-workloads/rhoai-ide-konflux-tenant/cuda-jupyter-datascience-ubi9-python-3-11:on-pr-{{revision}}
       - name: DOCKERFILE
-        value: base/ubi9-python-3.11/Dockerfile
+        value: jupyter/datascience/ubi9-python-3.11/Dockerfile
       - name: CONTEXT
         value: $(params.path-context)
       - name: HERMETIC
