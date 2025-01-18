@@ -630,4 +630,3 @@ spec:
       secretName: '{{ git_auth_secret }}'
 status: {}
 
-
