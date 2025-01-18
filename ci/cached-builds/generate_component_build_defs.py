@@ -91,8 +91,8 @@ def build_container(
 
 
 def component_build_pr(component_name, dockerfile_path,
-                       build_container_tasks: list[dict]) -> dict:
-    name = component_name + "-on-pull-request"
+                       build_container_tasks: list[dict], is_pr: bool = True) -> dict:
+    name = component_name + "-on-pull-request" if is_pr else "on-push"
     return {
         "apiVersion": "tekton.dev/v1",
         "kind": "PipelineRun",
@@ -100,10 +100,11 @@ def component_build_pr(component_name, dockerfile_path,
             "annotations": {
                 "build.appstudio.openshift.io/repo": git_url + "?rev={{revision}}",
                 "build.appstudio.redhat.com/commit_sha": "{{revision}}",
-                "build.appstudio.redhat.com/pull_request_number": "{{pull_request_number}}",
+                **({"build.appstudio.redhat.com/pull_request_number": "{{pull_request_number}}"} if is_pr else {}),
                 "build.appstudio.redhat.com/target_branch": "{{target_branch}}",
                 "pipelinesascode.tekton.dev/max-keep-runs": "3",
-                "pipelinesascode.tekton.dev/on-cel-expression": 'event == "pull_request" && target_branch == "main"',
+                "pipelinesascode.tekton.dev/on-cel-expression":
+                    ('event == "pull_request" && target_branch == "main"' if is_pr else 'event == "push" && target_branch == "main"'),
             },
             "creationTimestamp": None,
             "labels": {
@@ -120,9 +121,9 @@ def component_build_pr(component_name, dockerfile_path,
                 {"name": "revision", "value": "{{revision}}"},
                 {
                     "name": "output-image",
-                    "value": "quay.io/redhat-user-workloads/" + namespace_name + "/" + component_name + ":on-pr-{{revision}}",
+                    "value": "quay.io/redhat-user-workloads/" + namespace_name + "/" + component_name + ":" + ("on-pr-" if is_pr else "") + "{{revision}}",
                 },
-                {"name": "image-expires-after", "value": "5d"},
+                *([{"name": "image-expires-after", "value": "5d"}] if is_pr else []),
                 {"name": "dockerfile", "value": dockerfile_path},
             ],
             "pipelineSpec": {
@@ -707,9 +708,12 @@ def main():
             build_container_tasks.append(build_container())
 
         dirs = gha_pr_changed_files.analyze_build_directories(task)
+        with open(ROOT_DIR / ".tekton" / (task_name + "-on-push.yaml"), "w") as yaml_file:
+            print("---", file=yaml_file)
+            print(yaml.dump(component_build_pr(component_name=task_name, dockerfile_path=dirs[-1] + "/Dockerfile", build_container_tasks=build_container_tasks, is_pr=False)), file=yaml_file)
         with open(ROOT_DIR / ".tekton" / (task_name + "-pull-request.yaml"), "w") as yaml_file:
             print("---", file=yaml_file)
-            print(yaml.dump(component_build_pr(task_name, dockerfile_path=dirs[-1] + "/Dockerfile", build_container_tasks=build_container_tasks)), file=yaml_file)
+            print(yaml.dump(component_build_pr(component_name=task_name, dockerfile_path=dirs[-1] + "/Dockerfile", build_container_tasks=build_container_tasks, is_pr=True)), file=yaml_file)
 
 
 if __name__ == "__main__":
