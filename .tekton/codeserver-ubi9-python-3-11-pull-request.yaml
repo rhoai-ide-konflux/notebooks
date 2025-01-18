@@ -13,9 +13,9 @@ metadata:
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: rhoai-ide-konflux-notebooks
-    appstudio.openshift.io/component: rhoai-ide-konflux-notebooks-base-ubi9-python-311
+    appstudio.openshift.io/component: codeserver-ubi9-python-3-11
     pipelines.appstudio.openshift.io/type: build
-  name: rhoai-ide-konflux-notebooks-base-ubi9-python-311-on-pull-request
+  name: codeserver-ubi9-python-3-11-on-pull-request
   namespace: rhoai-ide-konflux-tenant
 spec:
   params:
