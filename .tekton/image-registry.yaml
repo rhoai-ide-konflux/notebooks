@@ -15,28 +15,28 @@
 items:
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.3@sha256:11b9ce26fd2933ccc81ca3f983e094ec54326a2e0aaf8bdcc4c0b8fea1a42c53
+        bundle: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.3@sha256:d35ff2504c0f58fd71879c917a1c66d817143cd8586b4bbd6cff0f3f91e5d040
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.3@sha256:11b9ce26fd2933ccc81ca3f983e094ec54326a2e0aaf8bdcc4c0b8fea1a42c53
+        bundle: quay.io/konflux-ci/tekton-catalog/task-buildah-oci-ta:0.3@sha256:d35ff2504c0f58fd71879c917a1c66d817143cd8586b4bbd6cff0f3f91e5d040
   - spec:
       taskRef:
         bundle: quay.io/konflux-ci/tekton-catalog/task-show-sbom:0.1@sha256:945a7c9066d3e0a95d3fddb7e8a6992e4d632a2a75d8f3a9bd2ff2fef0ec9aa0
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-init:0.2@sha256:90dda596d44b3f861889da2fba161dff34c6116fe76c3989e3f84262ea0f29cd
+        bundle: quay.io/konflux-ci/tekton-catalog/task-init:0.2@sha256:b76b563510ad9db0049e9b4512a152aef2bb51fb714363b6aa592744a580bcbd
   - spec:
       taskRef:
         bundle: quay.io/konflux-ci/tekton-catalog/task-git-clone-oci-ta:0.1@sha256:f72fcca6732516339d55ac5f01660e287968e64e857a40a8608db27e298b5126
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-prefetch-dependencies-oci-ta:0.1@sha256:994f816e36ac832f4020647afd69223a015c84c503f925013c573fed52f05420
+        bundle: quay.io/konflux-ci/tekton-catalog/task-prefetch-dependencies-oci-ta:0.1@sha256:8fb092dae7109ac211d8b98413d9bc0c71c14f64644ce239676383576f861a86
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-build-image-index:0.1@sha256:479775c8655d815fb515aeb97efc0e64284a8520c452754981970900b937a393
+        bundle: quay.io/konflux-ci/tekton-catalog/task-build-image-index:0.1@sha256:09344e6bda708f48ef759bbe84bce99515549f4cfdcbe89e417f695c19463260
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-source-build-oci-ta:0.1@sha256:75e882bf1619dd45a4043060ce42a6ad3ce781264ade5b7f66a1d994ee159126
+        bundle: quay.io/konflux-ci/tekton-catalog/task-source-build-oci-ta:0.1@sha256:bd191e50b2eb7e3996d7f24e38fa44b4552c142920b540fb7f3dc104e508a68f
   - spec:
       taskRef:
         bundle: quay.io/konflux-ci/tekton-catalog/task-deprecated-image-check:0.4@sha256:650330fde0773f73f6bac77ae573031c44c79165d9503b0d5ec1db3e6ef981d7
@@ -48,7 +48,7 @@ items:
         bundle: quay.io/konflux-ci/tekton-catalog/task-ecosystem-cert-preflight-checks:0.1@sha256:df8a25a3431a70544172ed4844f9d0c6229d39130633960729f825a031a7dea9
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-sast-snyk-check-oci-ta:0.3@sha256:af93b35e6e71a6ff7f3785ad8d8497b11204a5c0c33ab1a78b44f9d43f49c7a5
+        bundle: quay.io/konflux-ci/tekton-catalog/task-sast-snyk-check-oci-ta:0.3@sha256:9172196136831a61b9039ea4498fcdc71d6adc86d9694f236bea7b2a85488cd3
   - spec:
       taskRef:
         bundle: quay.io/konflux-ci/tekton-catalog/task-clamav-scan:0.2@sha256:c12e7a774bb07ad2796c01071b0dc0f199111b0ee99c45b55fa599e23b200bae
@@ -66,10 +66,10 @@ items:
         bundle: quay.io/konflux-ci/tekton-catalog/task-sast-shell-check-oci-ta:0.1@sha256:7553ec6925d0586b286502669b8e31a39dc73501f657426bac99019ac598d6ab
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-apply-tags:0.1@sha256:2c2d88c07623b2d25163994ded6e9f29205ea5bbab090f4c86379739940028b9
+        bundle: quay.io/konflux-ci/tekton-catalog/task-apply-tags:0.1@sha256:46f4471a86130c146a6e14124f175d6ef1ddb4b80ac51e7957d78a3facb6261b
   - spec:
       taskRef:
-        bundle: quay.io/konflux-ci/tekton-catalog/task-push-dockerfile-oci-ta:0.1@sha256:98ccae6ac132ab837fc51a70514be5fca656e09d6d4ad93230bd10f0119258aa
+        bundle: quay.io/konflux-ci/tekton-catalog/task-push-dockerfile-oci-ta:0.1@sha256:6cfb72a0b5c382a3584af322d11f3ae855d07eb72a6ee2253de7b9512a0c21a5
   - spec:
       taskRef:
         bundle: quay.io/konflux-ci/tekton-catalog/task-rpms-signature-scan:0.2@sha256:39cd56ffa26ff5edfd5bf9b61e902cae35a345c078cd9dcbc0737d30f3ce5ef1
