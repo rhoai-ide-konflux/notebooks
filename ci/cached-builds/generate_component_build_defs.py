@@ -21,8 +21,8 @@ namespace_name = "rhoai-ide-konflux-tenant"
 def bundle_task_ref(name) -> dict:
     with open(ROOT_DIR / ".tekton/image-registry.yaml") as f:
         data = yaml.load(f, Loader=yaml.FullLoader)
-        image: str
-        for image in data['images']:
+        images: list[str] = [image['spec']['taskRef']['bundle'] for image in data['items']]
+        for image in images:
             if m := re.search(f'^quay.io/konflux-ci/tekton-catalog/task-{name}:', image):
                 bundle = image
                 break
