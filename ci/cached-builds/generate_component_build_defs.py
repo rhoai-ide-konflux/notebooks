@@ -126,6 +126,16 @@ def component_build_pr(component_name, dockerfile_path,
                 *([{"name": "image-expires-after", "value": "5d"}] if is_pr else []),
                 {"name": "dockerfile", "value": dockerfile_path},
             ],
+            "taskRunSpecs": [
+                {
+                    "pipelineTaskName": "clair-scan",
+                    "computeResources": {
+                        "requests": {
+                            "memory": "8Gi"
+                        },
+                    },
+                },
+            ],
             "pipelineSpec": {
                 "description": "This pipeline is ideal for building container images from a Containerfile while maintaining trust after pipeline customization.\n\n_Uses `buildah` to create a container image leveraging [trusted artifacts](https://konflux-ci.dev/architecture/ADR/0036-trusted-artifacts.html). It also optionally creates a source image and runs some build-time tests. Information is shared between tasks using OCI artifacts instead of PVCs. EC will pass the [`trusted_task.trusted`](https://enterprisecontract.dev/docs/ec-policies/release_policy.html#trusted_task__trusted) policy as long as all data used to build the artifact is generated from trusted tasks.\nThis pipeline is pushed as a Tekton bundle to [quay.io](https://quay.io/repository/konflux-ci/tekton-catalog/pipeline-docker-build-oci-ta?tab=tags)_\n",
                 "finally": [

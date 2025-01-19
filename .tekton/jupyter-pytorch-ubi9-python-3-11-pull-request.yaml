@@ -746,6 +746,11 @@ spec:
       optional: true
     - name: netrc
       optional: true
+  taskRunSpecs:
+  - computeResources:
+      requests:
+        memory: 8Gi
+    pipelineTaskName: clair-scan
   taskRunTemplate: {}
   workspaces:
   - name: git-auth
