@@ -17,7 +17,7 @@ torch = {version = "~=2.4.0", index = "pytorch"}
 torchvision = {version = "~=0.19.0", index = "pytorch"}
 
 # Datascience and useful extensions
-boto3 = "~=1.35.14"
+boto3 = "~=1.37.13"
 kafka-python-ng = "~=2.2.2"
 kfp = "~=2.9.0"
 matplotlib = "~=3.9.2"

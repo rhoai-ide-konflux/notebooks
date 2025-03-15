@@ -19,7 +19,7 @@ datasets = "~=2.21.0"
 accelerate = "~=0.34.2"
 trustyai = "~=0.6.1"
 # Datascience and useful extensions
-boto3 = "~=1.35.14"
+boto3 = "~=1.37.13"
 kafka-python-ng = "~=2.2.2"
 kfp = "~=2.9.0"
 matplotlib = "~=3.6.3" # Should be pinned down to this version in order to be compatible with trustyai
