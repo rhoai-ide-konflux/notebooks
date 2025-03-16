@@ -6,7 +6,7 @@ require (
 	github.com/containerd/platforms v0.2.1
 	github.com/moby/buildkit v0.18.1
 	github.com/opencontainers/go-digest v1.0.0
-	github.com/opencontainers/image-spec v1.1.0
+	github.com/opencontainers/image-spec v1.1.1
 	github.com/pkg/errors v0.9.1
 )
 
